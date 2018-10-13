@@ -1,0 +1,211 @@
+html {
+	background-color: rgb(255,255,255);
+}
+
+.container-news_component {
+	/* Set the background here*/
+	background-color: rgb(255,255,255);
+	/* Set widths for responsive layout*/
+	min-width: 324px;
+	max-width: 648px;
+	/* This margin can be varied at a later date */
+	margin: 2px; /* Offset from page background */
+}
+.component-separator {
+	/* Set the background here */
+	background-color: rgb(169,169,169);
+	/* Dimensions */
+	height: 3px;
+	width: 100%;
+	/* Margins */
+	margin-bottom: 2px;
+}
+.component-heading {
+	/* Set the background here */
+	background: rgb(48,94,143); /* Old browsers */
+	background: -moz-linear-gradient(top, rgb(48,94,143) 0%, rgb(28,70,118) 100%); /* Old Firefox */
+	background: -webkit-linear-gradient(top, rgb(48,94,143) 0%,rgb(28,70,118) 100%); /* Old Chrome and Safari */
+	background: linear-gradient(to bottom, rgb(48,94,143) 0%,rgb(28,70,118) 100%); /* New IE, Firefox, Chrome, Opera and Safari */
+
+	/* Dimensions */
+	height: 27px;
+	width: 100%;
+
+	/* Margins */
+	margin-bottom: 4px;
+
+	/* Position*/
+	position: relative;
+
+	/* Font */
+	color: rgb(255,255,255);
+	font: 700 15px/15px Arial, Helvetica, sans-serif;
+}
+
+.component-heading:before {
+	content: attr(data-heading);
+	text-transform: uppercase;
+	position: absolute;
+	top: 7px;
+	left: 10px;
+}
+
+.container-modules {
+	border: 1px solid rgb(169,169,169);
+	display: block;
+	float: left;
+}
+
+.module {
+	float: left;
+	padding: 12px 7px 12px 7px;
+	height: 288px;
+}
+
+.module-breaking_news {
+	position: relative;
+	width: 328px;
+}
+
+.module-breaking_news .news-link {
+	position: absolute;
+	display: block;
+	bottom: 5px;
+	left: 60px;
+	font: 400 13px Arial, Helvetica, sans-serif;
+}
+
+.module-breaking_news a.news-link {
+	color: rgb(3,115,179);
+}
+
+.module-sports_news {
+	position: relative;
+	width: 290px;
+}
+
+.module-sports_news .news-link {
+	position: absolute;
+	display: block;
+	bottom: 5px;
+	left: 29px;
+	font: 400 13px Arial, Helvetica, sans-serif;
+}
+
+.module-sports_news a.news-link {
+	 color: rgb(0,0,0);
+}
+
+.module-title {
+	position: absolute;
+	font: 700 13px/13px Arial, Helvetica, sans-serif;
+	width: 100%;
+}
+
+.module-title:before {
+	content: attr(data-title);
+	text-transform: uppercase;
+	position: absolute;
+	top: 0;
+	left: 3px;
+}
+
+/* If "pointer-right" class is present append the pointer character, account for slight push-down effect by this character */
+/* NB: This was the only way I could trap a class which had an optional class in order to provide an override, must use this
+	idea in some of my personal projects */
+
+.module-title[class~="pointer-right"]:before {
+	content: attr(data-title) " \25BA";
+	top: -1px;
+}
+
+.title-red {
+	color: rgb(181,29,33);
+}
+
+.title-green {
+	color: rgb(36,154,49);
+}
+
+.list-news {
+	margin-top: 22px;
+}
+
+a.news-link {
+	text-decoration: none;
+	width: 100%;
+	display: block;
+}
+
+a.news-link:hover {
+	text-decoration: underline;
+}
+
+.list-news.list-news--striped {
+	padding-left: 0;
+	list-style: none;
+}
+
+.list-news--striped li {
+	height: 24px;
+	width: 100%;
+	margin: 3px 0 3px 0;
+	position: relative;
+}
+
+.list-news--striped li:first-child {
+	margin-top: 0;
+}
+
+.list-news--striped li:nth-child(2n) {
+	background-color: rgb(255,255,255);
+	/* Setting this so as to ensure that this background stripe can be configured to other colors in teh future */
+}
+
+.list-news--striped li:nth-child(2n+1) {
+	background-color: rgb(228,228,228);
+}
+
+.list-news--striped li:before {
+	padding-left: 0;
+	position: absolute;
+	bottom: 8px;
+	left: 5px;
+	width: 45px;
+	height: 10px;
+	border-right: 1px solid rgb(161,161,161);
+	color: rgb(110,110,110);
+	font: 400 11px Arial, Helvetica, sans-serif;
+	content: attr(data-timedisplay);
+}
+
+.list-news.list-news--polished {
+	padding-left: 7px;
+	list-style: decimal;
+	list-style-position: inside;
+	color: rgb(161,161,161);
+	font: 500 16px Georgia, serif;
+	font-stretch: expanded;
+}
+
+.list-news--polished li {
+	height: 24px;
+	width: 100%;
+	margin: 3px 0 3px 0;
+	position: relative;
+}
+
+.list-news--polished li:first-child {
+	margin-top: 0;
+}
+
+.list-news--polished li a {
+	position: absolute;
+	left: 30px;
+
+	/* Set ellipsis truncation for long titles */
+	width: 250px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
